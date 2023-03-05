@@ -3,7 +3,7 @@ const  db = require('./conexion.js')
 const mathjs = require('mathjs');
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 const openai = new OpenAIApi(configuration);
 const EMOTION_MODEL = 'text-embedding-ada-002';
