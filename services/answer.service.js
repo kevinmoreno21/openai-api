@@ -93,6 +93,9 @@ class AnswerService{
   generatePromptQuery(query, context) {
     let prompt =  `Responde de forma concisa y clara como si fueras un vendedor a la pregunta "${query}" usando las siguientes notas:
     Notas: '`;
+    // toma los primeros 3 valores del array
+    context = context.slice(0, 3);
+
     context.forEach((item) => {
       for (const key in item) {
         prompt += `${key} : "${item[key]}", `;
