@@ -174,7 +174,7 @@ class AnswerService{
     })
     .finally(() => {
       // Liberar la conexión del pool
-      db.end();
+      // db.end();
     });
   }
 
