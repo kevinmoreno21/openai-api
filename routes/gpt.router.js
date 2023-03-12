@@ -46,6 +46,9 @@ router.post('/webhook', async (req, res) => {
   function welcome(agent) {
     agent.add(`Welcome to my agent!`);
   }
+  function PruebaWebhook(agent) {
+    agent.add(`Welcome to my PruebaWebhook!`);
+  }
 
   function fallback(agent) {
     agent.add(`I didn't understand`);
@@ -61,7 +64,8 @@ router.post('/webhook', async (req, res) => {
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('Default Fallback Intent', ConsultaProducto);
+  intentMap.set('ConsultaProducto', ConsultaProducto);
+  intentMap.set('PruebaWebhook', PruebaWebhook);
   agent.handleRequest(intentMap);
 });
 
