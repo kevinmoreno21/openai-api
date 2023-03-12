@@ -5,14 +5,16 @@ const answerService = new AnswerService();
 
 
 router.post('/products', async (req, res) => {
-  const {query} = req.body;
-  const anwser = await answerService.getKeyWords(query);
+  const data= req.body;
+  console.log(data);
+  const anwser = await answerService.getKeyWords(data.queryResult.queryText);
   res.status(200).json({message: anwser});
 });
 
 router.post('/general-info', async (req, res) => {
-  const {query} = req.body;
-  const anwser = await answerService.testContext(query);
+  const data = req.body;
+  console.log(data);
+  const anwser = await answerService.testContext(data.queryResult.queryText);
   res.status(200).json({message: anwser});
 });
 
