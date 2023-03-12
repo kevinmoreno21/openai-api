@@ -57,7 +57,7 @@ router.post('/webhook', async (req, res) => {
 
   async function ConsultaProducto(agent) {
     const data = req.body;
-    const anwser = await answerService.testContext(data.queryResult.queryText);
+    const anwser = await answerService.getKeyWords(data.queryResult.queryText);
     agent.add(anwser);
   }
 
